@@ -2,7 +2,7 @@ import React from 'react';
 import { StatusBar, useColorScheme, StyleSheet, Text } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
@@ -12,7 +12,7 @@ import GameDetailScreen from './src/screens/GameDetailScreen';
 import AddGameScreen from './src/screens/AddGameScreen';
 import GamingNewsScreen from './src/screens/GamingNewsScreen';
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const appStyles = StyleSheet.create({
