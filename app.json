@@ -1,4 +1,10 @@
 {
-  "name": "GAMEvault",
-  "displayName": "GAMEvault"
+  "name": "gamevault",
+  "displayName": "GameVault",
+  "version": "1.0.0",
+  "project": {
+    "android": {
+      "package": "com.gamevault"
+    }
+  }
 }
