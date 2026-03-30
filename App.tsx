@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { enableScreens } from 'react-native-screens';
 
 // Import screens
 import GameListScreen from './src/screens/GameListScreen';
@@ -14,6 +15,8 @@ import GamingNewsScreen from './src/screens/GamingNewsScreen';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
+
+enableScreens();
 
 const appStyles = StyleSheet.create({
   root: {
