@@ -1,5 +1,5 @@
 import React from 'react';
-import { StatusBar, useColorScheme } from 'react-native';
+import { StatusBar, useColorScheme, StyleSheet, Text } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -14,6 +14,20 @@ import GamingNewsScreen from './src/screens/GamingNewsScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+
+const appStyles = StyleSheet.create({
+  root: {
+    flex: 1,
+  },
+  tabIconStyle: {
+    fontSize: 20,
+  },
+});
+
+// Tab icon components
+const CatalogIcon = () => <Text style={appStyles.tabIconStyle}>🎮</Text>;
+const AddGameIcon = () => <Text style={appStyles.tabIconStyle}>➕</Text>;
+const NewsIcon = () => <Text style={appStyles.tabIconStyle}>📰</Text>;
 
 // Stack Navigator for Catalog
 const CatalogStack = () => {
@@ -75,9 +89,7 @@ const TabNavigator = () => {
         component={CatalogStack}
         options={{
           tabBarLabel: 'Catálogo',
-          tabBarIcon: ({ color }) => (
-            <Text style={{ fontSize: 20 }}>🎮</Text>
-          ),
+          tabBarIcon: () => <CatalogIcon />,
         }}
       />
       <Tab.Screen
@@ -85,9 +97,7 @@ const TabNavigator = () => {
         component={AddGameScreen}
         options={{
           tabBarLabel: 'Agregar',
-          tabBarIcon: ({ color }) => (
-            <Text style={{ fontSize: 20 }}>➕</Text>
-          ),
+          tabBarIcon: () => <AddGameIcon />,
         }}
       />
       <Tab.Screen
@@ -95,9 +105,7 @@ const TabNavigator = () => {
         component={GamingNewsScreen}
         options={{
           tabBarLabel: 'Noticias',
-          tabBarIcon: ({ color }) => (
-            <Text style={{ fontSize: 20 }}>📰</Text>
-          ),
+          tabBarIcon: () => <NewsIcon />,
         }}
       />
     </Tab.Navigator>
@@ -108,7 +116,7 @@ const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
+    <GestureHandlerRootView style={appStyles.root}>
       <SafeAreaProvider>
         <StatusBar
           barStyle={isDarkMode ? 'light-content' : 'dark-content'}
@@ -121,7 +129,5 @@ const App = () => {
     </GestureHandlerRootView>
   );
 };
-
-import { Text } from 'react-native';
 
 export default App;

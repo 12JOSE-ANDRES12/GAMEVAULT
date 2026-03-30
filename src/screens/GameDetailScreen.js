@@ -80,7 +80,7 @@ const GameDetailScreen = ({ route, navigation }) => {
 
           <View style={styles.ratingSection}>
             <Text style={styles.star}>⭐⭐⭐⭐⭐</Text>
-            <Text style={{ marginLeft: 8, color: '#666' }}>5.0 (2,341 reseñas)</Text>
+            <Text style={styles.ratingText}>5.0 (2,341 reseñas)</Text>
           </View>
 
           <View style={styles.descriptionSection}>
@@ -88,52 +88,26 @@ const GameDetailScreen = ({ route, navigation }) => {
             <Text style={styles.descriptionText}>{game.description}</Text>
           </View>
 
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              marginTop: 16,
-              paddingTop: 12,
-              borderTopWidth: 1,
-              borderTopColor: '#e0e0e0',
-            }}
-          >
-            <Text style={{ fontSize: 14, color: '#666', fontWeight: '600' }}>
+          <View style={styles.quantitySection}>
+            <Text style={styles.quantityLabel}>
               Cantidad:
             </Text>
             <Pressable
               onPress={handleDecreaseQuantity}
-              style={{
-                marginLeft: 12,
-                paddingHorizontal: 12,
-                paddingVertical: 6,
-                backgroundColor: '#e0e0e0',
-                borderRadius: 4,
-              }}
+              style={styles.quantityButton}
             >
-              <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#333' }}>
+              <Text style={styles.quantityButtonText}>
                 −
               </Text>
             </Pressable>
-            <Text
-              style={{
-                marginHorizontal: 12,
-                fontSize: 16,
-                fontWeight: 'bold',
-              }}
-            >
+            <Text style={styles.quantityValue}>
               {quantity}
             </Text>
             <Pressable
               onPress={handleIncreaseQuantity}
-              style={{
-                paddingHorizontal: 12,
-                paddingVertical: 6,
-                backgroundColor: '#e0e0e0',
-                borderRadius: 4,
-              }}
+              style={styles.quantityButton}
             >
-              <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#333' }}>
+              <Text style={styles.quantityButtonText}>
                 +
               </Text>
             </Pressable>

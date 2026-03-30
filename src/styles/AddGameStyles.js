@@ -12,6 +12,9 @@ const AddGameStyles = StyleSheet.create({
   formContent: {
     paddingBottom: 30,
   },
+  keyboardAvoidingView: {
+    flex: 1,
+  },
   card: {
     backgroundColor: '#fff',
     borderRadius: 12,
@@ -47,6 +50,11 @@ const AddGameStyles = StyleSheet.create({
     paddingVertical: 10,
     fontSize: 14,
     marginBottom: 12,
+  },
+  requiredNote: {
+    fontSize: 12,
+    color: '#999',
+    marginTop: 12,
   },
   buttonContainer: {
     flexDirection: 'row',

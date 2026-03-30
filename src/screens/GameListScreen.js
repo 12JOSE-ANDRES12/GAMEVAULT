@@ -6,8 +6,17 @@ import {
   Pressable,
   Text,
   SafeAreaView,
+  StyleSheet,
 } from 'react-native';
 import styles from '../styles/GameListStyles';
+
+const screenStyles = StyleSheet.create({
+  loadingText: {
+    marginTop: 12,
+    fontSize: 16,
+    color: '#666',
+  },
+});
 
 const GAME_DATA = [
   {
@@ -141,13 +150,7 @@ const GameListScreen = ({ navigation }) => {
       <SafeAreaView style={styles.container}>
         <View style={styles.loadingContainer}>
           <ActivityIndicator size="large" color="#3498db" />
-          <Text
-            style={{
-              marginTop: 12,
-              fontSize: 16,
-              color: '#666',
-            }}
-          >
+          <Text style={screenStyles.loadingText}>
             Cargando catálogo...
           </Text>
         </View>

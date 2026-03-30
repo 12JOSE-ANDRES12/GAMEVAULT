@@ -76,9 +76,43 @@ const GameDetailStyles = StyleSheet.create({
     marginVertical: 12,
     paddingVertical: 8,
   },
+  ratingText: {
+    marginLeft: 8,
+    color: '#666',
+  },
   star: {
     fontSize: 20,
     marginRight: 4,
+  },
+  quantitySection: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 16,
+    paddingTop: 12,
+    borderTopWidth: 1,
+    borderTopColor: '#e0e0e0',
+  },
+  quantityLabel: {
+    fontSize: 14,
+    color: '#666',
+    fontWeight: '600',
+  },
+  quantityButton: {
+    marginLeft: 12,
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    backgroundColor: '#e0e0e0',
+    borderRadius: 4,
+  },
+  quantityButtonText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#333',
+  },
+  quantityValue: {
+    marginHorizontal: 12,
+    fontSize: 16,
+    fontWeight: 'bold',
   },
   actionContainer: {
     gap: 12,

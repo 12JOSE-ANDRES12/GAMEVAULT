@@ -78,7 +78,7 @@ const AddGameScreen = () => {
     <SafeAreaView style={styles.container}>
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-        style={{ flex: 1 }}
+        style={styles.keyboardAvoidingView}
       >
         <ScrollView
           contentContainerStyle={styles.scrollContent}
@@ -138,7 +138,7 @@ const AddGameScreen = () => {
                 ))}
               </Picker>
 
-              <Text style={{ fontSize: 12, color: '#999', marginTop: 12 }}>
+              <Text style={styles.requiredNote}>
                 * Los campos marcados son obligatorios
               </Text>
             </View>
